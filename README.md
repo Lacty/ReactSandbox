@@ -1,2 +1,2 @@
 # ReactSandbox
-Reactでも勉強するかな
+Reactでも勉強する:D
