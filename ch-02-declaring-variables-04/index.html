@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ja">
+        <title>Let</title>
+        
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    </head>
+    
+    <body>
+        <h1>Let</h1>
+        <p>Open the console</p>
+        
+        <script type="text/babel">
+            
+            // Valiables can be scoped to code blocks
+            // ES6から導入されたLetを使用すると、ブロック内寿命の変数が宣言できる
+
+            var topic = "JavaScript"
+            
+            if (topic) {
+                let topic = "React"
+                console.log('block', topic) // React
+            }
+
+            console.log('global', topic) // JavaScript
+            
+        </script>
+    </body>
+</html>
