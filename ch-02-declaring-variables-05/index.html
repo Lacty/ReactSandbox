@@ -47,6 +47,8 @@
             var div,
                 container = document.getElementById('container')
 
+            // varで宣言した場合、iはスコープ外まで生き続けるため意図しない処理になる
+            // letを使用することでforが終了したと同時にiも消える
             for (var i=0; i<5; i++) {
                 div = document.createElement('div')
                 div.onclick = function() {
