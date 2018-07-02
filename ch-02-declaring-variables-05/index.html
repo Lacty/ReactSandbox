@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ja">
+        
+        <!--
+             mediaの指定は使用するデバイスによって変更
+             パソコン: screen
+             携帯端末: handheld
+             プリンタ: print
+        -->
+        <style media="screen">
+            #container {
+                display: flex; /* 中央 */
+                justify-content: space-around; /* アイテムを均等に分散 */
+            }
+            
+            /*
+                > : 直下セレクタ
+                親セレクタ中の特定の要素にのみスタイルを適応させる
+                下記の場合containerがidに指定された要素内のdiv要素のみstyleが適応される
+                <hoge id="container">
+                    <div>ここが適応される</div>
+                </hoge>
+            */
+            #container > div {
+                height: 5em;
+                width: 5em;
+                background-color: purple;
+            }
+        </style>
+        
+        <title>Let</title>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    </head>
+    
+    <body>
+        <h1>Click on a Box</h1>
+        <div id="container"></div>
+        
+        <script type="text/babel">
+            
+            // Problem, counters are not scoped to for loop blocks
+
+            // div: undefined
+            // getElementByIdで<div id="container"></div>を取得
+            var div, container = document.getElementById('container')
+
+            for (var i=0; i<5; i++) {
+                div = document.createElement('div')
+                div.onclick = function() {
+                    alert('This is box #' + i)
+                }
+                container.appendChild(div)
+            }
+        </script>
+    </body>
+</html>
