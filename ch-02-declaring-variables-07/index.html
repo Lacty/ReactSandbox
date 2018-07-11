@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ja">
+        <title>Template Strings</title>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    </head>
+
+    <body>
+        <h1>Template Strings</h1>
+        <p>Open the console</p>
+
+        <script type="text/babel">
+
+            const lastName   = "Ferrell"
+            const middleName = "Willian"
+            const firstName  = "Jhon"
+
+            console.log(lastName + ", " + firstName + " " + middleName)
+
+            // `` 括った文字列内に変数を埋め込む方法
+            console.log(`${lastName}, ${firstName} ${middleName}`)
+
+        </script>
+    </body>
+</html>
