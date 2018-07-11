@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ja">
+        <title>Template Strings</title>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    </head>
+
+    <body>
+        <h1>Template Strings</h1>
+        <p>Open the console</p>
+
+        <script type="text/babel">
+
+            const lastName    = "Ferrell"
+            const middleName  = "William"
+            const firstName   = "John"
+            const ticketAgent = "The iO Theater"
+            const event       = "TJ & Dave"
+            const qty         = 2
+            const price       = 10
+
+            /*  ES6 template strings do not ignore whitespace
+                ${}内に式が書ける ${var + var} ${var * var}
+                whitespaceがしっかり反映される
+                */
+            console.log(`
+                Hello ${firstName},
+
+                Thanks for ordering ${qty} tickets to ${event}.
+
+                Order Details
+                 ${firstName} ${middleName} ${lastName}
+                 ${qty} x $${price} = $${qty*price} to ${event}
+
+                You can pick your tickets up at will call 30 minutes before
+                the show.
+
+                Thanks,
+
+                ${ticketAgent}
+            `)
+
+        </script>
+    </body>
+</html>
